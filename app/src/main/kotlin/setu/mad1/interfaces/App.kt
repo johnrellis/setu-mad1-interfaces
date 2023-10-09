@@ -3,6 +3,8 @@
  */
 package setu.mad1.interfaces
 
+import java.util.*
+
 class App {
     val greeting: String
         get() {
@@ -11,5 +13,7 @@ class App {
 }
 
 fun main() {
-    println(App().greeting)
+    val dataStoreFactory = DataStoreFactory()
+    val dataStore = dataStoreFactory.create("xml")
+    dataStore.write(Task("get a life", Date()))
 }
