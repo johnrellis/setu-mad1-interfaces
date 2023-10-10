@@ -14,6 +14,9 @@ class App {
 
 fun main() {
     val dataStoreFactory = DataStoreFactory()
-    val dataStore = dataStoreFactory.create("xml")
+    val dataStore = dataStoreFactory.create("json")
     dataStore.write(Task("get a life", Date()))
+    println(dataStore is JsonDataStore)
+    println(dataStore is Datastore)
+    println(dataStore is Runnable)
 }
